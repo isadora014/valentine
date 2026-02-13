@@ -1,15 +1,18 @@
 body {
-    background: #fff0f6;
+    background: linear-gradient(180deg, #fff0f6, #ffe4ec);
     color: #4a2c3a;
     font-family: 'Segoe UI', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 650px;
     margin: auto;
     padding: 40px 20px;
+    position: relative;
+    z-index: 2;
 }
 
 h1 {
@@ -28,24 +31,16 @@ h1 {
     width: 100%;
     border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 105, 135, 0.4);
 }
 
 .card {
-    background: #ffffff;
+    background: white;
     border-radius: 16px;
     padding: 25px;
     margin-bottom: 25px;
-    box-shadow: 0 10px 25px rgba(255, 192, 203, 0.2);
+    box-shadow: 0 10px 25px rgba(255, 105, 135, 0.2);
     animation: fadeIn 1s ease forwards;
-}
-
-.card h2 {
-    margin-top: 0;
-}
-
-ul {
-    padding-left: 20px;
 }
 
 .center {
@@ -53,24 +48,98 @@ ul {
 }
 
 button {
-    background: #ff85a2;
+    background: #ff4f81;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
+    padding: 12px 24px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
 
 button:hover {
-    background: #ff5c8a;
+    background: #ff2f6c;
 }
 
 .hidden {
     display: none;
     margin-top: 15px;
     font-size: 18px;
+}
+
+.big-love {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff2f6c;
+}
+
+/* Timeline */
+.timeline {
+    border-left: 3px solid #ff85a2;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+}
+
+.timeline-item .date {
+    font-weight: bold;
+    color: #ff4f81;
+}
+
+/* Floating hearts */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    width: 20px;
+    height: 20px;
+    background: #ff4f81;
+    transform: rotate(45deg);
+    animation: floatUp 8s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4f81;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-110vh) rotate(45deg);
+        opacity: 0;
+    }
 }
 
 @keyframes fadeIn {
