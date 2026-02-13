@@ -15,3 +15,15 @@ button.addEventListener("click", function() {
         button.innerText = "Play Our Song 💕";
     }
 });
+function randomLove() {
+    const messages = [
+        "You're my safe place.",
+        "My favorite human."
+    ];
+
+    const text = document.getElementById("loveMessage");
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    text.innerText = messages[randomIndex];
+    text.style.display = "block";
+}
+
