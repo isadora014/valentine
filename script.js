@@ -3,32 +3,15 @@ function showLove() {
     text.style.display = "block";
 }
 
+const button = document.getElementById("playButton");
 const song = document.getElementById("ourSong");
-const button = document.getElementById("musicButton");
 
-function toggleMusic() {
+button.addEventListener("click", function() {
     if (song.paused) {
         song.play();
-        button.innerText = "Pause Kingston 🤍";
+        button.innerText = "Playing Kingston ♡";
     } else {
         song.pause();
-        button.innerText = "Play Kingston 🤍";
+        button.innerText = "Play Our Song 💕";
     }
-}
-
-
-const startDate = new Date("2025-11-08");
-
-function updateCountdown() {
-    const now = new Date();
-    const diff = now - startDate;
-
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(diff / (1000 * 60 * 60)) % 24;
-
-    document.getElementById("countdown").innerText =
-        days + " days and " + hours + " hours with you 🤍";
-}
-
-updateCountdown();
-setInterval(updateCountdown, 1000);
+});
